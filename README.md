@@ -7,14 +7,12 @@ I'm a data scientist (recent grad, at least), and I've wanted to get a firmer gr
 
 Here, as I read the [CLRS book on algorithms](http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/), I'm implementing the algorithms I come across in the book in 3 (maybe 4) languages: **Python**, **Java**, and **Rust** (and maybe **Julia**?). The idea is to learn about algorithms and data structures, while learning/strengthening my understanding in these languages by implementing them. The book is very long, so I don't know that I'll ever fully do it. There are also problems that I can consider doing. I may also do some projects that implement these algorithms. I don't know (as of 11/3/2023).
 
-I decided to put this on github for 3 reasons: (1) I want to take advantage of version control and force myself to use git regularly, (2) to make it public to motivate myself to keep working on it, and (3) please look at this potential employers, look at my code! look at my passion! I want/need a job! --> look, my [LinkedIn](https://www.linkedin.com/in/haydenboline/)!
+I decided to put this on github for 3 reasons: (1) I want to take advantage of version control and force myself to use git regularly, (2) to make it public to motivate myself to keep working on it, and (3) please look at this potential employers, look at my code! look at my passion! I want/need a job! --> and, oh wow, my [LinkedIn](https://www.linkedin.com/in/haydenboline/)!
 
 ## my work (*so far*)
 
 ### insertion sort
-
-[**Python**](./insertion_sort/python/insertion_sort.py)
-
-[**Java**](./insertion_sort/java/insertion_sort.java)
-
+[**Python**](./insertion_sort/python/insertion_sort.py) \
+[**Java**](./insertion_sort/java/insertion_sort.java) \
+[**Rust**](./insertion_sort/rust/insertion_sort.rs)\
 [*Notes*](./insertion_sort/notes.md)
