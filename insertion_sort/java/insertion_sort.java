@@ -20,7 +20,7 @@ public class insertion_sort {
     
     public static void main(String[] args) {
         Random rand = new Random();
-        int[] A = new int[25];
+        int[] A = new int[20];
         for(int i = 0; i < A.length; i++) {
             A[i] = rand.nextInt(100);
         }

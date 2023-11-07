@@ -11,7 +11,7 @@ def insertion_sort(A):
 
 if __name__=="__main__":
     import random
-    A = random.sample(range(10),10)
+    A = random.sample(range(100),20)
     
     print("Original:", A)
     print("  Sorted:", insertion_sort(A))
