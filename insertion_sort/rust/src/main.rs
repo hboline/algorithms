@@ -16,10 +16,8 @@ fn sort(a_in: &Vec<i32>) -> Vec<i32> {
     for i in 1..n {
         key = a[i];
         j = (i - 1) as i32;
-        // the second condition of the and-statement in the while
-        // loop is conditioned on the first to avoid an overflow issue
-        // when converting from j = -1int32 to usize
-        while (j >= 0) & (if j >= 0 {a[j as usize] > key} else {false}) {
+        
+        while (j >= 0) && (a[j as usize] > key) {
             a[(j+1) as usize] = a[j as usize];
             j -= 1;
         }

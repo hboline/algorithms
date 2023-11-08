@@ -2,6 +2,8 @@
 
 # Insertion Sort Notes
 
+`buildall.ps1` will compile the Java and Rust binaries, and `runall.ps1` will run examples of all 3 programs.
+
 ## [Python](./python/insertion_sort.py)
 Implementing this algorithm in python was pretty simple, the only struggle I really had was reasoning how to number the indexes for the for loop compared to the algorithm in the book (arrays start at 1 and go to n in the book, python is of course 0 to n-1). However, that didn't take long to figure out. Coding in python is pretty nice. Even if I have to look a couple things up, it doesn't take long to write.
 
@@ -55,4 +57,10 @@ while (j >= 0) & (if j >= 0 {a[j as usize] > key} else {false}) {...}
 
 I found this pretty neat as a solution to this issue. I would still like to see if there are other ways to write this part though.
 
-🪶
+**Update (11/8/23)**: Turns out the above was unnecessary. The operator `&` I used is the *non*-short circuiting kind. `&&` short ciruits (i.e. if the first arg of `&&` is `false`, then it doesn't evaluate the second, which is useful here). Not sure why when I looked up "rust and operator" the first one I got was `&`, because it seems like the more widely used one is `&&`. Anyways, now the while can just be written:
+
+```rust
+while (j >= 0) && (a[j as usize] > key) {...}
+```
+
+Good to know! 🪶
