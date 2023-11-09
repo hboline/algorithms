@@ -13,3 +13,6 @@ I decided to put this on github for 3 reasons: (1) I want to take advantage of v
 
 ### insertion sort
 [**Python**](./insertion_sort/python/insertion_sort.py) | [**Java**](./insertion_sort/java/insertion_sort.java) | [**Rust**](./insertion_sort/rust/src/main.rs) | [*Notes*](./insertion_sort/notes.md)
+
+### chapter exercises
+[Ch. 2](./book_exercises/chapter_2/chapter_2.md) | 
