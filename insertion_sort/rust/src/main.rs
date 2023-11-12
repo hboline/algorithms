@@ -36,15 +36,15 @@ fn main() {
 
     let (a, a_correct): (Vec<i32>, Option<Vec<i32>>) = if args.len() > 1 {
         let contents: Vec<Vec<i32>> = args
-        .iter()
-        .map(|x|
-            read_to_string(PathBuf::from(x))
-            .expect("invalid path/file does not exist")
-            .lines()
-            .map(|y| 
-                y.parse::<i32>().unwrap()
-            ).collect()
-        ).collect();
+            .iter()
+            .map(|x|
+                read_to_string(PathBuf::from(x))
+                .expect("invalid path/file does not exist")
+                .lines()
+                .map(|y| 
+                    y.parse::<i32>().unwrap()
+                ).collect()
+            ).collect();
         
         (
             contents[0].clone(),

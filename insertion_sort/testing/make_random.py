@@ -2,7 +2,8 @@ import random
 import os
 import sys
 
-# HOW TO USE: pass argument to choose 
+# HOW TO USE: pass argument to choose how large array A should be
+# e.g. "python "
 
 def main():
     try:
