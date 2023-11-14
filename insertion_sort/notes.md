@@ -98,3 +98,38 @@ let x = if condition {
 }
 ```
 I.e., if `condition` is true, `x = value1`, else `x = value2`. Nothing too huge, but I thought this was pretty neat. Given Rust's general philosophy towards programming, this behavior makes a lot of sense. [🪶](#insertion-sort-notes)
+
+#### Update (11/13/23)
+Finally finished implementing testing I/O in Java that I had done in Python and Rust. I think I've started to get a better feel for how Java works and felt pretty comfortable while writing the code for it. That said, there were a few difficulties I ran into, but using Google and the Java documentation, I was able to figure it out.
+
+To store the input array, I couldn't use an `Array` object like I had before, since those arrays are static (in memory, i.e. on the stack), but reading in a file I wouldn't know what size my array needs to be before I run the program. `java.util.ArrayList` is a dynamic array object, and is what I needed to use here. I had to make slight edits to my `insertion_sort` method, but this just involved using `set` and `get` methods to fetch and update my array, so it wasn't a big difference.
+
+To read in the arrays, I wrote the `ArrGet` method, which was helpful since I need to go through this process twice. I'm now realizing though that this may have been helpful in my Rust implementation of this, but I'll leave it as-is.
+
+One peculiarity I ran into for Java when reading in an array is that in the `A.txt` file, the last line is empty based on how I wrote the code in Python. I noticed this before, but haven't had any issue with it in my Python and Rust implementations. Here, `nextInt()` cannot handle an empty line. To solve this, a simple try-catch can be used to catch the error and just ignore it. 
+
+```java
+try {
+    step = reader.nextInt();
+} catch (NoSuchElementException e) {
+    continue;
+}
+```
+Now, I'm wondering what Python and Rust are doing with that empty line. As a solution to that, I"ll just change the code that generates `A.txt` and `A_sorted.txt`.
+
+Finally, with everything implemented, we can test to see how fast each algorithm sorts an array of 100,000 randomly generated integers. To do this, from the [insertion_sort](.) directory, we run (on Windows, in powershell):
+
+```powershell
+PS :) .\buildall.ps1
+PS :) .\testall.ps1 100000
+```
+
+Which gives the following output:
+
+<picture> <img src="./testing/results.png"> </picture>
+
+(We could run this multiple times to get an average runtime, but this should be good enough to get a rough idea of how long each takes.) As expected, Rust was fasted, taking about 1.5 seconds. Java came in second at about 13 seconds, and then Python, at 243 seconds, 162 times slower than Rust! These results aren't really all that surprising given what each of these languages are. I did expect Java to be closer to Rust in runtime, but I suspect the way I read in the file in Rust was much faster than what I did in Java ([built-in functions](./rust/src/main.rs#L38) vs. a [while-loop](./java/insertion_sort.java#L23) to read line-by-line), so I will need to look into that. 
+
+It's worth noting that I tested how long the native `sort()` method takes in Python, and it is faster than the time I got for Rust (after all, that's how `A_sorted.txt` is made in the [make_random.py](./testing/make_random.py#L39) file), but that method is written in C and uses a more optimized algorithm for sorting (called timsort, or something).
+
+One final note: I should include bash scripts to for "buildall" and "testall", and I probably won't include a "runall" in future algorithm implementations. 🪶

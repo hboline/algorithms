@@ -25,7 +25,7 @@ def main():
         time_elapsed = end-start
 
         print("Array \"A\" was{}sorted correctly".format(" " if A == A_correct else " not "))
-        print("Runtime: {}s".format(time_elapsed))
+        print("Runtime: {:.3f}s".format(time_elapsed))
     else:
         A = random.sample(range(100),20)
 
