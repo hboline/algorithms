@@ -2,12 +2,12 @@
 
 # Insertion Sort Notes
 
-[Python](#python) | [Java](#java) | [Rust](#rust) | [Update 11/8/23](#update-11823) | [Update 11/11/23](#update-111123)
+[Python](#python) | [Java](#java) | [Rust](#rust) | [Update 11/8/23](#update-11823) | [Update 11/11/23](#update-111123) | [Update 11/13/2023 (FINAL)](#update-111323)
 
 `buildall.ps1` will compile the Java and Rust binaries, and `runall.ps1` will run examples of all 3 programs. `testall.ps1` will run a test for each, with runtimes.
 
 ## [Python](./python/insertion_sort.py)
-Implementing this algorithm in python was pretty simple, the only struggle I really had was reasoning how to number the indexes for the for loop compared to the algorithm in the book (arrays start at 1 and go to n in the book, python is of course 0 to n-1). However, that didn't take long to figure out. Coding in python is pretty nice. Even if I have to look a couple things up, it doesn't take long to write. [🪶](#insertion-sort-notes)
+Implementing this algorithm in python was pretty simple, the only struggle I really had was reasoning how to number the indices for the for loop compared to the algorithm in the book (arrays start at 1 and go to n in the book, python is of course 0 to n-1). However, that didn't take long to figure out. Coding in python is pretty nice. Even if I have to look a couple things up, it doesn't take long to write. [🪶](#insertion-sort-notes)
 
 ## [Java](./java/insertion_sort.java)
 Implementing this in Java was pretty difficult, mostly since I'm still learning Java. The main issue I had was confusion about copying an array. At first I intended to have the `sort()` function return the sorted array and assign that array to a new array. However, upon doing so I found that the original array `A` would be sorted as well. I still don't fully understand it, but the `sort()` function changes `A`. I then tried to copy `A` to a new array and then sort it, but `A` still ended up getting sorted. As I understand it now, arrays are objects, and the variable assigned to an array is actually a pointer to this object (the same thing happens for classes). When I set the new array equal to `A`, I'm just pointing to the same array. As for why the `sort()` method alters `A`, I think its because by using `A` as the input of the method, acting on `A`, and returning `A`, I'm actualling acting on that same pointer. This threw me off compared to something like what I'd find in python where the scope of the method is different and as such its essentially a different variable. 
