@@ -61,7 +61,7 @@ I found this pretty neat as a solution to this issue. I would still like to see 
 
 
 
-#### Update (11/8/23)
+## Update (11/8/23)
 Turns out the above was unnecessary. The operator `&` I used is the *non*-short circuiting kind. `&&` short ciruits (i.e. if the first arg of `&&` is `false`, then it doesn't evaluate the second, which is useful here). Not sure why when I looked up "rust and operator" the first one I got was `&`, because it seems like the more widely used one is `&&`. Anyways, now the while can just be written:
 
 ```rust
@@ -70,7 +70,7 @@ while (j >= 0) && (a[j as usize] > key) {...}
 
 Good to know! [🪶](#insertion-sort-notes)
 
-#### Update (11/11/23)
+## Update (11/11/23)
 I decided to implement a better way of testing each of the implementations of insertion sort. For each I'm adding the ability to optionally read in two files on the command line so that the programs can sort a file and check if it is correctly sorted. The unsorted and correctly sorted files are in the "testing" directory, "A.txt" and "A_sorted.txt". These can be created using the "make_random.py" on the command line, e.g. `.\...\testing\make_random.py N <output-path>` where N is the number of random items in A. Alternatively, the `testall.ps1` script accepts 1 argument `N` and will automatically run the Python, Java, and Rust programs with these inputs, and for each confirming that the output is correct, along with the runtime of the algorithm (this is done internally in each program). Java is not yet implemented, but it is for Python and Rust.
 
 Once again, this was very easy to implement in Python, but it was very difficult in Rust. It took about two days, but eventually I was able to figure it out (with a lot of research and reading of the Rust book). Parsing arguments in Rust is pretty simple.
@@ -99,7 +99,7 @@ let x = if condition {
 ```
 I.e., if `condition` is true, `x = value1`, else `x = value2`. Nothing too huge, but I thought this was pretty neat. Given Rust's general philosophy towards programming, this behavior makes a lot of sense. [🪶](#insertion-sort-notes)
 
-#### Update (11/13/23)
+## Update (11/13/23)
 Finally finished implementing testing I/O in Java that I had done in Python and Rust. I think I've started to get a better feel for how Java works and felt pretty comfortable while writing the code for it. That said, there were a few difficulties I ran into, but using Google and the Java documentation, I was able to figure it out.
 
 To store the input array, I couldn't use an `Array` object like I had before, since those arrays are static (in memory, i.e. on the stack), but reading in a file I wouldn't know what size my array needs to be before I run the program. `java.util.ArrayList` is a dynamic array object, and is what I needed to use here. I had to make slight edits to my `insertion_sort` method, but this just involved using `set` and `get` methods to fetch and update my array, so it wasn't a big difference.
