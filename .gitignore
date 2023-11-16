@@ -1,5 +1,6 @@
 *.pyc
-target
 *.class
 */testing/*.txt
 *insertion_sort_old.java
+
+target
