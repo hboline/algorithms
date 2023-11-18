@@ -2,5 +2,6 @@
 *.class
 */testing/*.txt
 *insertion_sort_old.java
+test.py
 
 target
