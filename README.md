@@ -19,8 +19,11 @@ I haven't yet decided whether I will or not, but I'd also like to consider imple
 
 ## My Work
 
-### insertion sort
+### Insertion Sort
 [**Python**](./insertion_sort/python/insertion_sort.py) | [**Java**](./insertion_sort/java/insertion_sort.java) | [**Rust**](./insertion_sort/rust/src/main.rs) | [*Notes*](./insertion_sort/notes.md)
+
+### Merge Sort
+[**Python**](./merge_sort/python/merge_sort.py) | [**Java**](./merge_sort/java/merge_sort.java) | [**Rust**](./merge_sort/rust/src/main.rs) | [*Notes*](./merge_sort/notes.md)
 
 ### CLRS Chapter Exercises
 [Ch. 2](./book_exercises/chapter_2/chapter_2.md) | 
