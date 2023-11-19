@@ -2,6 +2,8 @@
 *.class
 */testing/*.txt
 *insertion_sort_old.java
+*make_random.rs
+*.lock
 test.py
 
 target
