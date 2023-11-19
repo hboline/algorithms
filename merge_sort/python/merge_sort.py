@@ -55,7 +55,7 @@ def main():
     runtime = timeit(merge_sort, **{'A':A})
 
     print("Array \"A\" was{}sorted correctly".format(" " if A == A_correct else " not "))
-    print("Runtime: {:.3f}s".format(runtime))
+    print("Runtime: {:.3f}s\n".format(runtime))
 
 if __name__=="__main__":
     main()

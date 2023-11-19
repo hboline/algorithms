@@ -45,8 +45,6 @@ fn merge_sort(arr: &mut Vec<i32>, p: usize, r: usize) {
 }
 
 fn main() {
-    env::set_var("RUST_BACKTRACE", "1");
-
     let argv: Vec<String> = env::args().collect();
 
     let contents: Vec<Vec<i32>> = argv[1..=2]
@@ -71,5 +69,5 @@ fn main() {
     let duration = start.elapsed();
 
     println!("Array \"A\" was{}sorted correctly", if a == a_correct {" "} else {" not "});
-    println!("Runtime: {:?}", duration);
+    println!("Runtime: {:?}\n", duration);
 }
